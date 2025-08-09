@@ -74,8 +74,6 @@ Key hyperparameters detected:
 - **Evaluation**: accuracy/loss plots, per-class metrics
 - **Inference**: predict on new images
 
-## Results (fill in after you train)
-The notebook likely logs accuracy and loss per epoch. Add your final metrics and confusion matrix screenshots here after training.
 
 ## Reproducibility
 - Seed random generators (NumPy, framework) for consistent runs
