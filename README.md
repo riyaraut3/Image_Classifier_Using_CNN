@@ -87,6 +87,3 @@ The notebook likely logs accuracy and loss per epoch. Add your final metrics and
 - **Class imbalance**: Consider class weights or augmentation.
 - **Poor accuracy**: Verify data directory structure and label mappings; try a pretrained backbone.
 
-
----
-*Generated automatically from the notebook structure. Review and customize as needed.*
