@@ -2,24 +2,19 @@
 
 ## Overview
 This repository contains a Jupyter notebook for training and evaluating an image classification model.
-
 It is implemented in **TensorFlow/Keras**.
-
-The current architecture detected: **Custom CNN**.
-
-Default batch size: **32**.
-
-Default training epochs: **20**.
+The architecture used is a **Custom CNN**.
+Training is configured for 20 epochs with a batch size of 32.
 
 ## Features
-- Data loading and preprocessing
-- Model definition and training loop
-- Evaluation with metrics and plots
-- Easily switchable hyperparameters
-- Ready to extend with transfer learning
+- Image data loading and preprocessing
+- Custom CNN model for classification
+- Training and evaluation with accuracy and loss tracking
+- Easily adjustable hyperparameters
+- Compatible with transfer learning extensions
 
 ## Dataset
-The notebook expects an image dataset organized in typical classification folders, e.g.:
+The notebook expects an image dataset organized in classification folders:
 
 ```
 DATASET_ROOT/
@@ -32,14 +27,11 @@ DATASET_ROOT/
   test/           # optional
 ```
 
-Detected dataset path hints in the notebook:
-
-- data
-
+Detected dataset path:
+- `data`
 
 ## Setup
-Install Python 3.9+ and the following packages:
-
+Requires Python 3.9+ and the following packages:
 ```
 imghdr
 matplotlib
@@ -49,39 +41,33 @@ os
 tensorflow
 ```
 
+Install with:
+```bash
+pip install imghdr matplotlib numpy opencv-python tensorflow
+```
 
 ## Usage
 1. Create and activate a virtual environment.
-2. Install dependencies listed above.
-3. Launch Jupyter and open `img_classification.ipynb`.
-4. Update dataset paths inside the notebook to point to your local dataset.
-5. Run cells top to bottom to train and evaluate the model.
-
+2. Install dependencies.
+3. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+4. Open `img_classification.ipynb`.
+5. Update dataset paths in the notebook.
+6. Run all cells to train and evaluate the model.
 
 ## Configuration
-Key hyperparameters detected:
-
 - `BATCH_SIZE` = 32
 - `EPOCHS` = 20
-- `loss` = tf.losses.BinaryCrossentropy
-- `metrics` = ["accuracy"]
 
-## Notebook Guide
-- **Imports & setup**: installs and seeds
-- **Data pipeline**: reads images, applies resizing/augmentation
-- **Model**: builds a Custom CNN and compiles
-- **Training**: fits for 20 epochs with callbacks (if any)
-- **Evaluation**: accuracy/loss plots, per-class metrics
-- **Inference**: predict on new images
+## Results
+| Metric | Value |
+|---|---|
+| Epochs | 20 |
+| Train Accuracy | 0.9844 |
+| Train Loss | 0.0128 |
 
+![Accuracy Curve](/mnt/data/accuracy_curve.png)
 
-## Reproducibility
-- Seed random generators (NumPy, framework) for consistent runs
-- Log exact package versions (`pip freeze > requirements.txt`)
-- Capture hardware info (CPU/GPU) if performance matters
-
-## Troubleshooting
-- **OOM / CUDA errors**: Lower batch size or image size.
-- **Class imbalance**: Consider class weights or augmentation.
-- **Poor accuracy**: Verify data directory structure and label mappings; try a pretrained backbone.
-
+![Loss Curve](/mnt/data/loss_curve.png)
